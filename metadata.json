@@ -1,0 +1,9 @@
+{
+  "name": "Unifyr",
+  "description": "Video-first event ecosystem connecting Hosts, Vendors, and Attendees.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera",
+    "microphone"
+  ]
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unifyr | Video-First Event Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+                background: '#000000',
+                foreground: '#ffffff',
+                navy: '#0a153d', // Updated to the deep midnight blue requested
+                gold: '#D4AF37',
+                neon: {
+                    blue: '#2563EB', // Deeper, modern Royal Blue (was #3B82F6)
+                    teal: '#00FFD4'
+                },
+                neutral: {
+                    850: '#1f1f1f',
+                    900: '#171717',
+                    950: '#0a0a0a',
+                }
+            },
+            borderRadius: {
+                lg: '12px',
+                xl: '16px',
+                '2xl': '24px'
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        body { background-color: black; color: white; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
