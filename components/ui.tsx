@@ -80,9 +80,9 @@ export const Tabs: React.FC<{ items: TabItem[], activeId: string, onChange: (id:
 );
 
 // Input
-export const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = (props) => (
+export const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = ({ className = '', ...props }) => (
     <input 
-        className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:border-yellow-400 focus:outline-none placeholder:text-neutral-600 transition-colors"
+        className={`w-full bg-neutral-900 border border-neutral-800 rounded-2xl px-4 py-3 text-white focus:border-yellow-400 focus:outline-none placeholder:text-neutral-600 transition-colors ${className}`}
         {...props}
     />
 );
