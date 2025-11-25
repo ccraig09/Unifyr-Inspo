@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { SAMPLE_VIDEOS } from '../../constants';
-import { CheckCircle2, Play } from 'lucide-react';
+import { Play, Crown, MessageCircle, Sparkles } from 'lucide-react';
 
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -10,6 +10,30 @@ interface AuthLayoutProps {
 }
 
 export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitle }) => {
+  const benefits = [
+    {
+      label: 'VIP Hosting',
+      icon: Crown,
+      textColor: 'text-yellow-400',
+      bgColor: 'bg-yellow-400/10',
+      borderColor: 'border-yellow-400/30'
+    },
+    {
+      label: 'Realtime Chat',
+      icon: MessageCircle,
+      textColor: 'text-neon-blue',
+      bgColor: 'bg-neon-blue/10',
+      borderColor: 'border-neon-blue/30'
+    },
+    {
+      label: 'Smart Suggestions',
+      icon: Sparkles,
+      textColor: 'text-neon-teal',
+      bgColor: 'bg-neon-teal/10',
+      borderColor: 'border-neon-teal/30'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col lg:flex-row overflow-hidden">
       {/* LEFT: Cinematic Video Hero */}
@@ -44,10 +68,13 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
           </p>
 
           <div className="flex flex-wrap gap-3">
-            {['VIP Hosting', 'Realtime Chat', 'Smart Suggestions'].map((benefit) => (
-              <div key={benefit} className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-sm font-medium">
-                <CheckCircle2 size={16} className="text-yellow-400" />
-                {benefit}
+            {benefits.map((benefit) => (
+              <div 
+                key={benefit.label} 
+                className={`flex items-center gap-2 backdrop-blur-md border px-4 py-2 rounded-full text-sm font-bold transition-transform hover:scale-105 ${benefit.bgColor} ${benefit.borderColor} ${benefit.textColor}`}
+              >
+                <benefit.icon size={16} />
+                <span className="text-white">{benefit.label}</span>
               </div>
             ))}
           </div>
