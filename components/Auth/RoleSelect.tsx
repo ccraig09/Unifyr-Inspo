@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { UserRole } from '../../types';
-import { Star, Briefcase, User, Check } from 'lucide-react';
+import { Crown, Store, Ticket, Check } from 'lucide-react';
 
 interface RoleSelectProps {
   selectedRole: UserRole | null;
@@ -13,29 +13,32 @@ export const RoleSelect: React.FC<RoleSelectProps> = ({ selectedRole, onSelect }
     {
       id: UserRole.HOST,
       title: 'Event Host',
-      icon: Star,
+      icon: Crown,
       description: 'I want to create events, sell tickets, and manage lineups.',
       benefits: ['Create unlimited events', 'Access host dashboard', 'Manage vendors'],
       color: 'text-yellow-400',
-      borderHover: 'group-hover:border-yellow-400'
+      borderHover: 'group-hover:border-yellow-400',
+      bgHover: 'group-hover:bg-yellow-400/10'
     },
     {
       id: UserRole.VENDOR,
       title: 'Vendor',
-      icon: Briefcase,
+      icon: Store,
       description: 'I offer services (food, tech, security) to event hosts.',
       benefits: ['Apply to gigs', 'Showcase services', 'Get booked'],
       color: 'text-neon-teal',
-      borderHover: 'group-hover:border-neon-teal'
+      borderHover: 'group-hover:border-neon-teal',
+      bgHover: 'group-hover:bg-neon-teal/10'
     },
     {
       id: UserRole.ATTENDEE,
       title: 'Attendee',
-      icon: User,
+      icon: Ticket,
       description: 'I want to discover events, buy tickets, and have fun.',
       benefits: ['Personalized feed', 'Group chat', 'Exclusive drops'],
       color: 'text-neon-blue',
-      borderHover: 'group-hover:border-neon-blue'
+      borderHover: 'group-hover:border-neon-blue',
+      bgHover: 'group-hover:bg-neon-blue/10'
     }
   ];
 
@@ -55,7 +58,7 @@ export const RoleSelect: React.FC<RoleSelectProps> = ({ selectedRole, onSelect }
                 }`}
             >
                 <div className="flex items-start gap-4">
-                    <div className={`w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center shrink-0 border border-neutral-700 ${role.color}`}>
+                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 border border-neutral-700 transition-colors ${role.color} ${isSelected ? 'bg-neutral-800' : 'bg-neutral-800/50'} ${role.bgHover}`}>
                         <role.icon size={24} />
                     </div>
                     <div className="flex-1">
@@ -67,8 +70,8 @@ export const RoleSelect: React.FC<RoleSelectProps> = ({ selectedRole, onSelect }
                             {role.description}
                         </p>
                         <div className="flex flex-wrap gap-2">
-                            {role.benefits.slice(0, 2).map((b, i) => (
-                                <span key={i} className="text-[10px] bg-neutral-800 px-2 py-1 rounded text-neutral-500 group-hover:text-neutral-300 transition-colors">
+                            {role.benefits.map((b, i) => (
+                                <span key={i} className="text-[10px] font-medium bg-neutral-800 border border-neutral-700 px-2 py-1 rounded-md text-neutral-400 group-hover:text-neutral-200 group-hover:border-neutral-600 transition-colors whitespace-nowrap">
                                     {b}
                                 </span>
                             ))}
