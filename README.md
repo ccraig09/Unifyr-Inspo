@@ -6,7 +6,7 @@
 
 This contains everything you need to run your app locally.
 
-This folder mirrors the Lab Studio session—switch Cursor to Gemini 3 for new iterations and commit the exports here.
+> Note: This folder is a snapshot exported from **Lab Studio**, our in-house Gemini 3 workspace. No need to open any external design UI—just run it locally if you need the reference implementation.
 
 ## Run Locally
 
