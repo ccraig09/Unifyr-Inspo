@@ -72,11 +72,11 @@ const App: React.FC = () => {
         case 'events-list':
             return <EventsPage events={events} onEventClick={setActiveEvent} />;
         case 'dashboard-host':
-            return <HostDashboard user={user!} events={events} />;
+            return <HostDashboard user={user!} events={events} onEventClick={setActiveEvent} />;
         case 'dashboard-vendor':
             return <VendorDashboard user={user!} applications={MOCK_APPLICATIONS} />;
         case 'dashboard-attendee':
-            return <AttendeeDashboard user={user!} events={events} />;
+            return <AttendeeDashboard user={user!} events={events} onEventClick={setActiveEvent} />;
         case 'settings':
             return <SettingsPage user={user || MOCK_USER} />;
         case 'messages':
